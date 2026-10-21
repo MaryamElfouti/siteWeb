@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveautés | ZAYNA</title>
+
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+
+    <style>
+        :root {
+            --gold: #a87532;
+            --gold-light: #d7b77e;
+            --cream: #faf5eb;
+            --brown: #402718;
+            --green: #284b3b;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--cream);
+            color: var(--brown);
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .navbar {
+            background-color: #fffdf8;
+            border-bottom: 1px solid #e4d2b2;
+        }
+
+        .navbar-brand {
+            color: var(--gold);
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        .navbar-brand:hover,
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--gold);
+        }
+
+        .nav-link {
+            color: var(--brown);
+            margin: 0 5px;
+        }
+
+        .pattern {
+            background-color: #efe1c9;
+            background-image:
+                repeating-linear-gradient(
+                    45deg, transparent 0, transparent 17px,
+                    rgba(168, 117, 50, 0.10) 18px,
+                    transparent 20px
+                ),
+                repeating-linear-gradient(
+                    -45deg, transparent 0, transparent 17px,
+                    rgba(168, 117, 50, 0.10) 18px,
+                    transparent 20px
+                );
+        }
+
+        .hero {
+            padding: 55px 20px;
+            text-align: center;
+            background:
+                linear-gradient(
+                    rgba(250, 245, 235, 0.86),
+                    rgba(250, 245, 235, 0.90)
+                ),
+                url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            border-bottom: 3px solid var(--gold-light);
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 5vw, 54px);
+            font-weight: bold;
+            color: var(--brown);
+        }
+
+        .hero p {
+            font-size: 17px;
+        }
+
+        .ornament {
+            color: var(--gold);
+            font-size: 25px;
+            margin-top: 10px;
+            letter-spacing: 8px;
+        }
+
+        .collection-section {
+            padding: 35px 0 10px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .section-symbol {
+            color: var(--gold);
+            font-size: 35px;
+        }
+
+        .section-heading h2 {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 30px;
+            margin: 0;
+        }
+
+        .section-heading p {
+            color: #725d49;
+            margin: 4px 0 0;
+        }
+
+        .heading-line {
+            height: 1px;
+            flex: 1;
+            background-color: var(--gold-light);
+        }
+
+        .product-card {
+            height: 100%;
+            background-color: #fffdf9;
+            border: 1px solid #e4d1b3;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(64, 39, 24, 0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            background-color: #eee1cc;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--green);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .product-info {
+            padding: 15px 13px;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--brown);
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #786653;
+            font-size: 14px;
+            min-height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 19px;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .info-link {
+            display: block;
+            font-family: Arial, sans-serif;
+            color: #786653;
+            font-size: 12px;
+            text-decoration: none;
+            margin-bottom: 12px;
+        }
+
+        .info-link:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        .btn-gold {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: var(--gold);
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--green);
+            border-color: var(--green);
+            color: white;
+        }
+
+        .contact-band {
+            margin: 40px 0 30px;
+            padding: 30px;
+            border: 1px solid #dfc69d;
+            border-radius: 10px;
+            background-color: #f0e3ce;
+        }
+
+        .contact-band h2 {
+            color: var(--brown);
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .contact-band p {
+            color: #6e5843;
+            margin-bottom: 0;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--green);
+            color: white;
+        }
+
+        footer {
+            background-color: var(--brown);
+            color: #f5e5c9;
+            text-align: center;
+            padding: 24px 12px;
+            border-top: 4px solid var(--gold);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .tagline {
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 40px 15px;
+            }
+
+            .product-image {
+                height: 190px;
+            }
+
+            .section-heading h2 {
+                font-size: 24px;
+            }
+
+            .heading-line {
+                display: none;
+            }
+
+            .contact-band {
+                padding: 22px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">ZAYNA</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Ouvrir le menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bijoux.html">Bijoux</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sacs.html">Sacs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="nouveautes.html">Nouveautés</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="histoire.html">Notre histoire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero pattern">
+    <h1>Nos Nouveautés</h1>
+    <p>L'élégance du Maroc, réinventée pour vous.</p>
+    <div class="ornament">✦ ❖ ✦</div>
+</header>
+
+<main class="container">
+
+    <!-- COLLECTION DE BIJOUX -->
+    <section class="collection-section">
+
+        <div class="section-heading">
+            <span class="section-symbol">✥</span>
+            <div>
+                <h2>Nouveaux Bijoux</h2>
+                <p>Des créations inspirées de l'artisanat marocain.</p>
+            </div>
+            <div class="heading-line"></div>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80"
+                         alt="Collier raffiné">
+                    <div class="product-info">
+                        <h3>Collier Andalou</h3>
+                        <p class="description">Un collier délicat aux détails lumineux.</p>
+                        <p class="price">180 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Collier%20Andalou&amp;prix=180">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=600&q=80&sat=-90"
+                         alt="Bijou délicat">
+                    <div class="product-info">
+                        <h3>Parure Noor</h3>
+                        <p class="description">Une parure élégante pour vos occasions.</p>
+                        <p class="price">230 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Parure%20Noor&amp;prix=230">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80"
+                         alt="Bague décorative">
+                    <div class="product-info">
+                        <h3>Bague Fès</h3>
+                        <p class="description">Une inspiration artisanale au charme unique.</p>
+                        <p class="price">150 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Bague%20F%C3%A8s&amp;prix=150">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=600&q=80&sat=-80"
+                         alt="Bracelet élégant">
+                    <div class="product-info">
+                        <h3>Bracelet Atlas</h3>
+                        <p class="description">Un bracelet chic aux finitions raffinées.</p>
+                        <p class="price">130 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Bracelet%20Atlas&amp;prix=130">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80"
+                         alt="Collier moderne">
+                    <div class="product-info">
+                        <h3>Collier Safa</h3>
+                        <p class="description">Une touche lumineuse pour votre tenue.</p>
+                        <p class="price">190 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Collier%20Safa&amp;prix=190">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80&sat=-60"
+                         alt="Bracelet moderne">
+                    <div class="product-info">
+                        <h3>Bracelet Bahia</h3>
+                        <p class="description">Un design discret avec une touche dorée.</p>
+                        <p class="price">140 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Bracelet%20Bahia&amp;prix=140">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="pattern text-center py-3 my-4"
+         style="border-top:1px solid #d7b77e;border-bottom:1px solid #d7b77e;color:#8a5d2d;letter-spacing:8px;">
+        ✧ ❖ ✧ ❖ ✧
+    </div>
+
+    <!-- COLLECTION DE SACS -->
+    <section class="collection-section">
+
+        <div class="section-heading">
+            <span class="section-symbol">♧</span>
+            <div>
+                <h2>Nouveaux Sacs</h2>
+                <p>Des modèles élégants avec une touche marocaine.</p>
+            </div>
+            <div class="heading-line"></div>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80"
+                         alt="Sac de collection">
+                    <div class="product-info">
+                        <h3>Sac Medina</h3>
+                        <p class="description">Un style inspiré des ruelles de l'ancienne médina.</p>
+                        <p class="price">320 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Sac%20Medina&amp;prix=320">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+                         alt="Sac de ville">
+                    <div class="product-info">
+                        <h3>Sac Atlas</h3>
+                        <p class="description">Un modèle pratique pour vos journées actives.</p>
+                        <p class="price">290 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Sac%20Atlas&amp;prix=290">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?auto=format&fit=crop&w=600&q=80"
+                         alt="Sac moderne">
+                    <div class="product-info">
+                        <h3>Sac Majorelle</h3>
+                        <p class="description">Une pièce moderne aux lignes élégantes.</p>
+                        <p class="price">350 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Sac%20Majorelle&amp;prix=350">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=600&q=80"
+                         alt="Sac raffiné">
+                    <div class="product-info">
+                        <h3>Sac Bahia</h3>
+                        <p class="description">Un sac raffiné pour un look intemporel.</p>
+                        <p class="price">280 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Sac%20Bahia&amp;prix=280">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=600&q=80"
+                         alt="Sac élégant">
+                    <div class="product-info">
+                        <h3>Sac Riad</h3>
+                        <p class="description">Une inspiration chaleureuse et traditionnelle.</p>
+                        <p class="price">310 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Sac%20Riad&amp;prix=310">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <article class="product-card">
+                    <span class="new-badge">Nouveau</span>
+                    <img class="product-image"
+                         src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80&sat=-100"
+                         alt="Sac classique">
+                    <div class="product-info">
+                        <h3>Sac Kasbah</h3>
+                        <p class="description">Un compagnon élégant pour vos sorties.</p>
+                        <p class="price">330 DH</p>
+                        <a class="info-link" href="contact.html">ⓘ Plus d'informations</a>
+                        <a class="btn-gold" href="commande.html?produit=Sac%20Kasbah&amp;prix=330">Commander</a>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-band pattern">
+        <div class="row align-items-center g-4">
+            <div class="col-md-8">
+                <h2>Une question sur nos créations ?</h2>
+                <p>
+                    Pour connaître les prix, la disponibilité ou obtenir
+                    plus d'informations sur un produit, contactez-nous.
+                </p>
+            </div>
+
+            <div class="col-md-4 text-md-end">
+                <a href="contact.html" class="contact-btn">
+                    Nous contacter →
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p style="font-size:23px;letter-spacing:4px;">ZAYNA</p>
+    <p class="tagline">Élégance ✦ Authenticité ✦ Maroc</p>
+    <p>&copy; 2026 ZAYNA — Tous droits réservés.</p>
+</footer>
+
+<script src="asset/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

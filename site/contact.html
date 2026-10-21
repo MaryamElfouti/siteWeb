@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAYNA - Contact</title>
+
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 15px;
+        }
+
+        .navbar-brand {
+            color: #b89555 !important;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .nav-link {
+            color: #333 !important;
+            margin: 0 8px;
+        }
+
+        .nav-link:hover {
+            color: #b89555 !important;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-top: 45px;
+            margin-bottom: 15px;
+            color: #b89555;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .page-description {
+            text-align: center;
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .contact-section {
+            padding-bottom: 60px;
+        }
+
+        .contact-box {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px #eee;
+            height: 100%;
+        }
+
+        .contact-box h2 {
+            color: #b89555;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        .form-control:focus {
+            border-color: #b89555;
+            box-shadow: 0 0 5px #e8d8b7;
+        }
+
+        .btn-gold {
+            background-color: #b89555;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+        }
+
+        .btn-gold:hover {
+            background-color: #96733b;
+            color: white;
+        }
+
+        .contact-info {
+            background-color: #faf7f1;
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+        }
+
+        .contact-info h2 {
+            color: #b89555;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-item h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .info-item p {
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        footer {
+            background-color: #29251f;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 29px;
+            }
+
+            .contact-box,
+            .contact-info {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">ZAYNA</a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Ouvrir le menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="bijoux.html">Bijoux</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="sacs.html">Sacs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="nouveautés.html">Nouveautés</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="histoire.html">Notre histoire</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Titre -->
+    <div class="container">
+        <h1 class="page-title">Contactez-nous</h1>
+
+        <p class="page-description">
+            Une question ou une commande ?
+            Nous serons ravis de vous aider.
+        </p>
+    </div>
+
+    <!-- Section Contact -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Formulaire -->
+                <div class="col-12 col-lg-7">
+                    <div class="contact-box">
+
+                        <h2>Envoyez-nous un message</h2>
+
+                        <form action="#" method="post">
+
+                            <div class="mb-3">
+                                <label for="nom" class="form-label">
+                                    Nom complet
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="nom"
+                                    name="nom"
+                                    placeholder="Entrez votre nom"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    Adresse e-mail
+                                </label>
+
+                                <input type="email"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    placeholder="exemple@email.com"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="sujet" class="form-label">
+                                    Sujet
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="sujet"
+                                    name="sujet"
+                                    placeholder="Sujet de votre message"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">
+                                    Votre message
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Écrivez votre message ici..."
+                                    required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold">
+                                Envoyer le message
+                            </button>
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <!-- Informations de contact -->
+                <div class="col-12 col-lg-5">
+                    <div class="contact-info">
+
+                        <h2>Nos coordonnées</h2>
+
+                        <div class="info-item">
+                            <h3>Notre marque</h3>
+                            <p>ZAYNA - Artisanat marocain moderne</p>
+                        </div>
+
+                        <div class="info-item">
+                            <h3>Adresse</h3>
+                            <p>Maroc</p>
+                        </div>
+
+                        <div class="info-item">
+                            <h3>E-mail</h3>
+                            <p>Contactez-nous par e-mail pour vos questions.</p>
+                        </div>
+
+                        <div class="info-item">
+                            <h3>Nos horaires</h3>
+                            <p>Du lundi au samedi</p>
+                            <p>De 9h00 à 18h00</p>
+                        </div>
+
+                        <div class="info-item">
+                            <h3>Besoin d'aide ?</h3>
+                            <p>
+                                Pour toute question concernant nos bijoux,
+                                nos sacs ou vos commandes, n'hésitez pas
+                                à nous contacter.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="mb-0">
+            &copy; 2026 ZAYNA - Tous droits réservés.
+        </p>
+    </footer>
+
+    <script src="asset/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

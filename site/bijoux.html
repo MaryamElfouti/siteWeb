@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijoux | ZAYNA</title>
+
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #faf8f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: white;
+            border-bottom: 1px solid #e5d5b0;
+        }
+
+        .navbar-brand {
+            color: #b18a45;
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .nav-link {
+            color: #333;
+        }
+
+        .nav-link:hover,
+        .navbar-brand:hover {
+            color: #b18a45;
+        }
+
+        .page-title {
+            color: #b18a45;
+            text-align: center;
+            margin: 40px 0 10px;
+            font-weight: bold;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #eee2cc;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .product-info h5 {
+            color: #8f6b32;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 19px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background-color: #b18a45;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn-gold:hover {
+            background-color: #8f6b32;
+            color: white;
+        }
+
+        footer {
+            background-color: white;
+            border-top: 1px solid #e5d5b0;
+            text-align: center;
+            padding: 20px;
+            margin-top: 45px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">ZAYNA</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Ouvrir le menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="bijoux.html">Bijoux</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sacs.html">Sacs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="nouveautés.html">Nouveautés</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="histoire.html">Notre histoire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <h1 class="page-title">Nos Bijoux</h1>
+    <p class="intro">Découvrez notre collection de bijoux élégants.</p>
+
+    <div class="row g-4">
+
+        <!-- Bijou 1 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="product-card">
+                <img
+                    src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80"
+                    alt="Collier doré">
+
+                <div class="product-info">
+                    <h5>Collier Doré</h5>
+                    <p>Un collier élégant pour compléter votre tenue.</p>
+                    <p class="price">180 DH</p>
+
+                    <a href="commande.html?produit=Collier%20Dor%C3%A9&amp;prix=180"
+                       class="btn-gold">Commander</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bijou 2 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="product-card">
+                <img
+                    src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80"
+                    alt="Bracelet élégant">
+
+                <div class="product-info">
+                    <h5>Bracelet Élégant</h5>
+                    <p>Un bracelet raffiné pour un style délicat.</p>
+                    <p class="price">120 DH</p>
+
+                    <a href="commande.html?produit=Bracelet%20%C3%89l%C3%A9gant&amp;prix=120"
+                       class="btn-gold">Commander</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bijou 3 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="product-card">
+                <img
+                    src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80"
+                    alt="Boucles d'oreilles">
+
+                <div class="product-info">
+                    <h5>Boucles d'Oreilles</h5>
+                    <p>Des boucles modernes pour toutes les occasions.</p>
+                    <p class="price">150 DH</p>
+
+                    <a href="commande.html?produit=Boucles%20d%27Oreilles&amp;prix=150"
+                       class="btn-gold">Commander</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bijou 4 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="product-card">
+                <img
+                    src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80"
+                    alt="Bague dorée">
+
+                <div class="product-info">
+                    <h5>Bague Dorée</h5>
+                    <p>Une bague discrète avec une finition élégante.</p>
+                    <p class="price">100 DH</p>
+
+                    <a href="commande.html?produit=Bague%20Dor%C3%A9e&amp;prix=100"
+                       class="btn-gold">Commander</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <p class="mb-0">&copy; 2026 ZAYNA — Tous droits réservés.</p>
+</footer>
+
+<script src="asset/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

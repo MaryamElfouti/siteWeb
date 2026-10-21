@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZAYNA | L'élégance marocaine</title>
+
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+
+    <style>
+        :root {
+            --green: #254638;
+            --green-light: #3d6651;
+            --gold: #b18a45;
+            --gold-light: #dfc795;
+            --cream: #faf6ed;
+            --brown: #38291e;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--cream);
+            color: var(--brown);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #fffdf8;
+            border-bottom: 1px solid #e5d6b9;
+            padding: 14px 0;
+        }
+
+        .navbar-brand {
+            color: var(--gold);
+            font-family: Georgia, serif;
+            font-size: 29px;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+
+        /* Logo */
+        .navbar-brand img {
+            height: 150px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .navbar-brand:hover {
+            color: var(--green);
+        }
+
+        .nav-link {
+            color: var(--brown);
+            font-size: 14px;
+            margin-left: 7px;
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+        }
+
+        /* Moroccan pattern */
+        .moroccan-pattern {
+            background-color: var(--green);
+            background-image:
+                repeating-linear-gradient(
+                    45deg,
+                    transparent 0,
+                    transparent 24px,
+                    rgba(223, 199, 149, 0.12) 25px,
+                    transparent 27px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent 0,
+                    transparent 24px,
+                    rgba(223, 199, 149, 0.12) 25px,
+                    transparent 27px
+                );
+        }
+
+        /* Main introduction */
+        .hero {
+            min-height: 490px;
+            display: flex;
+            align-items: center;
+            padding: 70px 0;
+            background:
+                linear-gradient(
+                    100deg,
+                    rgba(37, 70, 56, 0.97),
+                    rgba(37, 70, 56, 0.86)
+                ),
+                url("https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 680px;
+        }
+
+        .eyebrow {
+            color: var(--gold-light);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.12;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 570px;
+            color: #f0eadf;
+            font-size: 17px;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+
+        .hero-decoration {
+            color: var(--gold-light);
+            font-size: 25px;
+            letter-spacing: 12px;
+            margin-bottom: 20px;
+        }
+
+        .main-button {
+            display: inline-block;
+            padding: 13px 27px;
+            background-color: var(--gold);
+            color: white;
+            text-decoration: none;
+            border: 1px solid var(--gold);
+            border-radius: 3px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .main-button:hover {
+            background-color: transparent;
+            color: white;
+            border-color: var(--gold-light);
+        }
+
+        /* Brand introduction */
+        .intro-section {
+            padding: 85px 0;
+        }
+
+        .small-title {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .intro-section h2 {
+            color: var(--green);
+            font-family: Georgia, serif;
+            font-size: clamp(30px, 4vw, 43px);
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+
+        .intro-section p {
+            color: #6d5b49;
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        .ornament-box {
+            padding: 35px;
+            min-height: 270px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid var(--gold);
+            outline: 1px solid rgba(177, 138, 69, 0.4);
+            outline-offset: -9px;
+            background-color: #f0e5d0;
+        }
+
+        .ornament-box .symbol {
+            color: var(--green);
+            font-size: 62px;
+            line-height: 1.3;
+        }
+
+        .ornament-box h3 {
+            font-family: Georgia, serif;
+            color: var(--green);
+            font-size: 25px;
+            margin-top: 15px;
+        }
+
+        .ornament-box p {
+            font-size: 14px;
+            margin: 10px 0 0;
+        }
+
+        /* Values */
+        .values-section {
+            padding: 75px 0;
+            background-color: #fffdf8;
+            border-top: 1px solid #eadcc2;
+            border-bottom: 1px solid #eadcc2;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            color: var(--green);
+            font-family: Georgia, serif;
+            font-size: clamp(30px, 4vw, 40px);
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: #786653;
+            line-height: 1.8;
+        }
+
+        .value-item {
+            height: 100%;
+            text-align: center;
+            padding: 30px 22px;
+            border: 1px solid #e8dcc7;
+            background-color: var(--cream);
+        }
+
+        .value-symbol {
+            font-size: 35px;
+            color: var(--gold);
+            margin-bottom: 17px;
+        }
+
+        .value-item h3 {
+            font-family: Georgia, serif;
+            font-size: 21px;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .value-item p {
+            color: #786653;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        /* Story */
+        .story-section {
+            padding: 80px 0;
+        }
+
+        .story-card {
+            background-color: #efe4d1;
+            border-left: 4px solid var(--gold);
+            padding: 35px;
+        }
+
+        .story-card h2 {
+            color: var(--green);
+            font-family: Georgia, serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .story-card p {
+            color: #6d5b49;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .text-button {
+            display: inline-block;
+            color: var(--green);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 5px;
+        }
+
+        .text-button:hover {
+            color: var(--gold);
+        }
+
+        .story-decoration {
+            height: 100%;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            color: var(--gold-light);
+            font-family: Georgia, serif;
+            font-size: 28px;
+            line-height: 1.6;
+        }
+
+        .story-decoration span {
+            display: block;
+            color: white;
+            font-size: 15px;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+
+        /* Contact invitation */
+        .contact-section {
+            padding: 65px 15px;
+            text-align: center;
+            background-color: #efe4d1;
+            border-top: 1px solid var(--gold-light);
+        }
+
+        .contact-section h2 {
+            font-family: Georgia, serif;
+            color: var(--green);
+            font-size: clamp(29px, 4vw, 40px);
+            margin-bottom: 18px;
+        }
+
+        .contact-section p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #6d5b49;
+            line-height: 1.9;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 13px 28px;
+            background-color: var(--green);
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: var(--gold);
+            color: white;
+        }
+
+        /* Button for the additional section */
+        .btn-gold {
+            display: inline-block;
+            padding: 13px 28px;
+            background-color: var(--gold);
+            color: white;
+            text-decoration: none;
+            border: 1px solid var(--gold);
+            border-radius: 3px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--green);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #203c30;
+            color: #f5ead5;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 4px solid var(--gold);
+        }
+
+        .footer-brand {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: var(--gold-light);
+        }
+
+        footer p {
+            font-size: 13px;
+            margin: 8px 0;
+        }
+
+        .footer-tagline {
+            letter-spacing: 2px;
+            color: #d8c8a7;
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                min-height: auto;
+                padding: 65px 0;
+            }
+
+            .intro-section,
+            .story-section {
+                padding: 55px 0;
+            }
+
+            .ornament-box {
+                margin-top: 25px;
+            }
+
+            .story-decoration {
+                min-height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="asset/img/log.jpeg" alt="ZAYNA Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Ouvrir le menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bijoux.html">Bijoux</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sacs.html">Sacs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nouveautés.html">Nouveautés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="histoire.html">Notre histoire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Hero: introduction to ZAYNA -->
+    <header class="hero moroccan-pattern">
+        <div class="container">
+            <div class="hero-content">
+                <div class="eyebrow">
+                    L'âme du Maroc, le style d'aujourd'hui
+                </div>
+
+                <div class="hero-decoration">✦ ❖ ✦</div>
+
+                <h1>
+                    ZAYNA,<br>
+                    <span>l'élégance</span><br>
+                    à la marocaine.
+                </h1>
+
+                <p>
+                    Bienvenue dans un univers inspiré par la richesse
+                    du patrimoine marocain, la finesse des détails
+                    artisanaux et l'élégance des accessoires.
+                    ZAYNA célèbre une beauté authentique, entre tradition
+                    et modernité.
+                </p>
+
+                <a href="histoire.html" class="main-button">
+                    Découvrir notre histoire
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Brand introduction without product cards -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-7">
+                    <div class="small-title">Notre univers</div>
+
+                    <h2>
+                        Une inspiration marocaine,
+                        une élégance intemporelle.
+                    </h2>
+
+                    <p>
+                        ZAYNA est un univers dédié aux accessoires qui
+                        apportent une touche de caractère à chaque style.
+                        Notre inspiration vient des couleurs du Maroc,
+                        des motifs géométriques du zellige, des détails
+                        travaillés et du charme des créations artisanales.
+                    </p>
+
+                    <p>
+                        Nous mettons à l'honneur les bijoux et les sacs
+                        à travers une présentation élégante, chaleureuse
+                        et inspirée de notre patrimoine.
+                    </p>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="ornament-box moroccan-pattern">
+                        <div class="symbol">✧ ❖ ✧</div>
+                        <h3>Inspiré par le Maroc</h3>
+                        <p>Tradition · Créativité · Élégance</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Values, not product categories -->
+    <section class="values-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="small-title">L'esprit ZAYNA</div>
+
+                <h2>Ce qui nous inspire</h2>
+
+                <p>
+                    Une identité construite autour de la beauté des détails
+                    et de la richesse de la culture marocaine.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="value-item">
+                        <div class="value-symbol">❖</div>
+                        <h3>Patrimoine marocain</h3>
+                        <p>
+                            Les couleurs, les formes géométriques et
+                            l'artisanat marocain inspirent notre univers visuel.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="value-item">
+                        <div class="value-symbol">✧</div>
+                        <h3>Élégance</h3>
+                        <p>
+                            Des accessoires présentés dans un univers sobre,
+                            raffiné et pensé pour différents styles.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="value-item">
+                        <div class="value-symbol">❋</div>
+                        <h3>Tradition et modernité</h3>
+                        <p>
+                            Une rencontre entre l'inspiration traditionnelle
+                            et une présentation contemporaine.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand story -->
+    <section class="story-section">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+
+                <div class="col-lg-7">
+                    <div class="story-card h-100">
+                        <div class="small-title">Notre inspiration</div>
+
+                        <h2>Le Maroc au cœur de notre identité</h2>
+
+                        <p>
+                            Des motifs du zellige aux teintes chaleureuses
+                            des médinas, le Maroc possède un patrimoine
+                            esthétique riche et reconnaissable.
+                            C'est cet esprit qui inspire l'identité visuelle
+                            de ZAYNA.
+                        </p>
+
+                        <p>
+                            Notre ambition est de proposer un espace où
+                            les accessoires, les détails et l'élégance
+                            se rencontrent dans une ambiance authentique.
+                        </p>
+
+                        <a href="histoire.html" class="text-button">
+                            En savoir plus sur ZAYNA →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="story-decoration moroccan-pattern">
+                        <div>
+                            ✦ L'élégance dans les détails ✦
+                            <span>UNE INSPIRATION MAROCAINE</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- General contact only -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="small-title">Restons en contact</div>
+
+            <h2>Une question ? Parlons-en.</h2>
+
+            <p>
+                Pour toute demande d'information sur notre univers,
+                nos accessoires ou les détails de nos produits,
+                notre page Contact est à votre disposition.
+            </p>
+
+            <a href="contact.html" class="contact-button">
+                Nous contacter
+            </a>
+        </div>
+    </section>
+
+    <section class="text-center my-5 p-4"
+        style="background-color: #fff; border: 1px solid #e5d5b0; border-radius: 10px;">
+
+        <h2 style="color: #8f6b32; font-weight: bold;">
+            Découvrez tout l'univers ZAYNA
+        </h2>
+
+        <p style="color: #555; line-height: 1.8; margin-top: 15px;">
+            Les produits présentés sur notre site ne représentent qu'une partie
+            de notre collection. Découvrez d'autres modèles, styles et nouveautés
+            en nous contactant. Notre univers réserve encore de belles surprises !
+        </p>
+
+        <a href="contact.html" class="btn-gold">
+            Contactez-nous
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-brand">ZAYNA</div>
+
+            <p class="footer-tagline">
+                Élégance · Authenticité · Inspiration marocaine
+            </p>
+
+            <p>&copy; 2026 ZAYNA — Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="asset/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

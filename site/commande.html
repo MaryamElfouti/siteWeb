@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Commande | ZAYNA</title>
+
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #faf8f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: white;
+            border-bottom: 1px solid #e5d5b0;
+        }
+
+        .navbar-brand {
+            color: #b18a45;
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .nav-link {
+            color: #333;
+        }
+
+        .nav-link:hover,
+        .navbar-brand:hover {
+            color: #b18a45;
+        }
+
+        .page-title {
+            color: #b18a45;
+            text-align: center;
+            margin: 35px 0 25px;
+            font-weight: bold;
+        }
+
+        .order-box {
+            background-color: white;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            padding: 30px;
+            border: 1px solid #eee2cc;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-control,
+        .form-select {
+            border: 1px solid #d8c9ad;
+            padding: 10px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #b18a45;
+            box-shadow: 0 0 0 0.2rem rgba(177, 138, 69, 0.15);
+        }
+
+        .product-summary {
+            background-color: #faf8f4;
+            border: 1px solid #eee2cc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 22px;
+        }
+
+        .total {
+            color: #8f6b32;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .btn-gold {
+            background-color: #b18a45;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .btn-gold:hover {
+            background-color: #8f6b32;
+            color: white;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #edf7ed;
+            border: 1px solid #b7d9b8;
+            color: #245b2a;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: white;
+            border-top: 1px solid #e5d5b0;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">ZAYNA</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Ouvrir le menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bijoux.html">Bijoux</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sacs.html">Sacs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="nouveautés.html">Nouveautés</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="histoire.html">Notre histoire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Order form -->
+<main class="container">
+    <h1 class="page-title">Passer une commande</h1>
+
+    <div class="order-box">
+
+        <p class="text-center mb-4">
+            Remplissez le formulaire ci-dessous pour confirmer votre commande.
+        </p>
+
+        <!-- Product details -->
+        <div class="product-summary">
+            <h5 class="mb-3">Résumé de la commande</h5>
+
+            <p>
+                <strong>Produit :</strong>
+                <span id="productName">Produit sélectionné</span>
+            </p>
+
+            <p>
+                <strong>Prix unitaire :</strong>
+                <span id="unitPrice">0</span> DH
+            </p>
+
+            <p class="mb-0">
+                <strong>Total :</strong>
+                <span class="total" id="totalPrice">0 DH</span>
+            </p>
+        </div>
+
+        <form id="orderForm">
+
+            <div class="mb-3">
+                <label for="customerName" class="form-label">
+                    Nom complet
+                </label>
+                <input type="text" id="customerName"
+                       class="form-control"
+                       placeholder="Votre nom"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label for="customerPhone" class="form-label">
+                    Numéro de téléphone
+                </label>
+                <input type="tel" id="customerPhone"
+                       class="form-control"
+                       placeholder="Numéro fictif pour la démonstration"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label for="customerCity" class="form-label">
+                    Ville
+                </label>
+                <input type="text" id="customerCity"
+                       class="form-control"
+                       placeholder="Votre ville"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label for="customerAddress" class="form-label">
+                    Adresse de livraison
+                </label>
+                <textarea id="customerAddress"
+                          class="form-control"
+                          rows="3"
+                          placeholder="Votre adresse"
+                          required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="quantity" class="form-label">
+                    Quantité
+                </label>
+                <input type="number" id="quantity"
+                       class="form-control"
+                       value="1" min="1" max="20"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label for="notes" class="form-label">
+                    Remarque (facultatif)
+                </label>
+                <textarea id="notes"
+                          class="form-control"
+                          rows="2"
+                          placeholder="Une remarque concernant votre commande"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold">
+                Confirmer la commande
+            </button>
+
+        </form>
+
+        <!-- Confirmation message -->
+        <div id="successMessage" class="success-message" role="status">
+            <h4>Commande confirmée !</h4>
+            <p>
+                Votre commande de démonstration a été enregistrée
+                temporairement dans cette page.
+            </p>
+            <p id="confirmationDetails" class="mb-3"></p>
+            <p class="mb-0">
+                <strong>Remarque :</strong> ceci est un site de démonstration.
+                Aucune commande réelle n'a été envoyée.
+            </p>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <p class="mb-0">&copy; 2026 ZAYNA — Tous droits réservés.</p>
+</footer>
+
+<script src="asset/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Récupérer le produit et son prix depuis l'URL
+    const params = new URLSearchParams(window.location.search);
+
+    const product = params.get("produit") || "Produit de démonstration";
+    const price = Number(params.get("prix")) || 0;
+
+    const productName = document.getElementById("productName");
+    const unitPrice = document.getElementById("unitPrice");
+    const totalPrice = document.getElementById("totalPrice");
+    const quantity = document.getElementById("quantity");
+
+    productName.textContent = product;
+    unitPrice.textContent = price + " DH";
+
+    // Calculer le total
+    function calculateTotal() {
+        let qty = Number(quantity.value);
+
+        if (!Number.isFinite(qty) || qty < 1) {
+            qty = 1;
+        }
+
+        totalPrice.textContent = (price * qty) + " DH";
+    }
+
+    quantity.addEventListener("input", calculateTotal);
+
+    calculateTotal();
+
+    // Confirmer la commande de démonstration
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("customerName").value.trim();
+        const qty = Number(quantity.value);
+        const total = price * qty;
+
+        document.getElementById("confirmationDetails").textContent =
+            "Produit : " + product +
+            " | Quantité : " + qty +
+            " | Total : " + total + " DH";
+
+        document.getElementById("successMessage").style.display = "block";
+
+        // Masquer le formulaire après la confirmation
+        this.style.display = "none";
+
+        // Afficher la confirmation
+        document.getElementById("successMessage").scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    });
+</script>
+
+</body>
+</html>
